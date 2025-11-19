@@ -1,0 +1,21 @@
+
+High-precision | Heavy payload | Predictive maintenance
+
+Diagnostics and live feed synchronize as you scroll — observe mechanical motions,
+                        gear rotation and the reveal of the inspection line.
+
+
+Scroll to reveal the inspection line and bring the arm into focus. The animation mimics an
+                            industrial inspection rig moving along the line.
+
+
+Predictive flags and alerts show up as you scroll — simulated here with motion and hue
+                            shifts to call attention.
+
+
+RPM, torque curves, efficiency.
+
+Pressure, flow, temperature.
+
+
+Industrial Robotics Design — built with GSAP · ScrollTrigger
