@@ -101,6 +101,8 @@ a {
 .logo-plate .status {
     font-size: 11px;
     color: #e6b400;
+    text-align: center;
+    min-width: 110px;
     font-weight: 600;
     opacity: 0.95;
 }
@@ -228,7 +230,21 @@ section.block {
     min-height: 70vh;
     display: grid;
     place-items: center;
+    position: relative;
 }
+
+.block .bg-block {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    opacity: 0.1;
+    background: url(../images/block.png) 50% 50% no-repeat;
+    background-size: contain;
+}
+
 .machine {
     width: min(1200px, 96%);
     display: grid;
