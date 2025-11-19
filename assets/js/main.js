@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const bootTL = gsap.timeline({ defaults: { ease: "power2.out" } });
+const bootTl = gsap.timeline({ defaults: { ease: "power2.out" } });
 const logoPlate = document.querySelector(".logo-plate");
 const statusEl = document.querySelector(".status");
 
-bootTL
+bootTl
     .from(logoPlate, { y: -30, opacity: 0, duration: 0.9 })
     .to(
         statusEl,
@@ -26,7 +26,13 @@ bootTL
         },
     });
 
-gsap.from(".nav a", { y: -8, opacity: 0, stagger: 0.06, duration: 0.8, ease: "power3.out" });
+gsap.from(".nav a", {
+    y: -8,
+    opacity: 0,
+    stagger: 0.06,
+    duration: 0.8,
+    ease: "power3.out",
+});
 
 gsap.to(".hero-image", {
     scale: 1.14,
@@ -41,11 +47,13 @@ gsap.to(".hero-image", {
 
 ScrollTrigger.create({
     trigger: ".panel",
-    start: "top bottom",
-    end: "top center",
+    start: "top top",
+    end: "+=300",
     scrub: 1,
     onUpdate: (self) => {
-        const pct = Math.min(100, Math.max(0, self.progress * 100));
+        const progress = self.progress;
+
+        const pct = Math.min(100, Math.max(0, progress * 100));
         document.getElementById("revealLine").style.width = pct + "%";
     },
 });
@@ -65,14 +73,23 @@ gsap.utils.toArray(".card").forEach((card) => {
         opacity: 0,
         duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: { trigger: card, start: "top 85%", toggleActions: "play none none reverse" },
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+        },
     });
 });
 
 gsap.to(".hazard", {
     backgroundPosition: "560px 0",
     ease: "none",
-    scrollTrigger: { trigger: "main", start: "top top", end: "bottom bottom", scrub: 0.7 },
+    scrollTrigger: {
+        trigger: "main",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.7,
+    },
 });
 
 document.addEventListener("visibilitychange", () => {

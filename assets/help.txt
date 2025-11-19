@@ -1,4 +1,6 @@
 
+booting • 0%
+
 High-precision | Heavy payload | Predictive maintenance
 
 Diagnostics and live feed synchronize as you scroll — observe mechanical motions,

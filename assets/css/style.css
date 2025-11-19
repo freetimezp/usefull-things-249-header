@@ -1,23 +1,25 @@
-/* ---------- reset ---------- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    list-style: none;
+    list-style-type: none;
 }
+
+a {
+    text-decoration: none;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
     background: #0b0b0b;
     color: #e6e6e6;
 }
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
-/* ---------- nav / header (hazard stripes) ---------- */
 .nav {
     position: fixed;
     inset: 0 0 auto 0;
@@ -26,8 +28,8 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 48px;
-    z-index: 1200;
-    pointer-events: auto;
+    z-index: 1000;
+    pointer-events: none;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
     border-bottom: 2px solid rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(6px);
@@ -39,6 +41,7 @@ a {
     gap: 18px;
     align-items: center;
 }
+
 .nav a {
     text-transform: uppercase;
     font-weight: 600;
@@ -49,7 +52,6 @@ a {
     opacity: 0.9;
 }
 
-/* hazard stripe bar */
 .hazard {
     position: absolute;
     left: 0;
@@ -74,7 +76,6 @@ a {
     transform: skewY(-6deg);
 }
 
-/* centered logo (boot-up / metallic plate) */
 .logo-plate {
     position: fixed;
     left: 50%;
@@ -98,6 +99,7 @@ a {
     font-size: 18px;
     color: #f4f4f4;
 }
+
 .logo-plate .status {
     font-size: 11px;
     color: #e6b400;
@@ -107,7 +109,6 @@ a {
     opacity: 0.95;
 }
 
-/* main layout */
 .hero {
     height: 110vh;
     position: relative;
@@ -115,6 +116,7 @@ a {
     place-items: center;
     padding-top: 96px;
 }
+
 .panel {
     width: min(1200px, 96%);
     margin: 40px auto;
@@ -133,7 +135,6 @@ a {
     align-items: center;
 }
 
-/* left content — text + HUD */
 .info {
     padding: 8px 12px;
 }
@@ -154,6 +155,7 @@ a {
     gap: 12px;
     flex-wrap: wrap;
 }
+
 .chip {
     min-width: 120px;
     background: linear-gradient(180deg, #111, #151515);
@@ -175,7 +177,6 @@ a {
     color: #e6b400;
 }
 
-/* right content — image + gears */
 .visual {
     position: relative;
     height: 360px;
@@ -183,6 +184,7 @@ a {
     align-items: center;
     justify-content: center;
 }
+
 .visual .metal {
     width: 100%;
     height: 100%;
@@ -202,7 +204,6 @@ a {
     transform-origin: center;
 }
 
-/* rotating gears background (SVG) */
 .gears {
     position: absolute;
     inset: -40px -40px auto auto;
@@ -213,7 +214,6 @@ a {
     filter: blur(0.5px);
 }
 
-/* container separators and reveal line */
 .reveal-line {
     position: absolute;
     left: 50%;
@@ -222,9 +222,11 @@ a {
     height: 3px;
     background: #e6b400;
     transform: translateX(-50%);
+    height: 4px;
+    background: #e6b400;
+    box-shadow: 0 0 12px #e6b40088;
 }
 
-/* small section to scroll to show mechanical panels */
 section.block {
     padding: 64px 24px;
     min-height: 70vh;
@@ -240,9 +242,9 @@ section.block {
     transform: translateX(-50%);
     width: 600px;
     height: 400px;
-    opacity: 0.1;
     background: url(../images/block.png) 50% 50% no-repeat;
     background-size: contain;
+    opacity: 0.1;
 }
 
 .machine {
@@ -258,23 +260,9 @@ section.block {
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* footer / credits */
 footer {
     padding: 36px;
     text-align: center;
     color: #8c8c8c;
     font-size: 15px;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-    .panel-inner {
-        grid-template-columns: 1fr;
-    }
-    .visual {
-        height: 260px;
-    }
-    .nav {
-        padding: 0 18px;
-    }
 }
